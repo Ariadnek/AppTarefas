@@ -17,7 +17,9 @@ Interface Amigável: A interface foi projetada para ser intuitiva e de fácil us
 ## Tecnologias Utilizadas
 
 C#
+
 Windows Forms
+
 Serialização de objetos
 
 ## Como Usar
