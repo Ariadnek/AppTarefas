@@ -27,6 +27,19 @@ namespace AppTarefas
             AtualizarHora();
             IniciarTemporizador();
         }
+        private void btnIntegrateGoogleCalendar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.IntegrateWithGoogleCalendar(); // Chama o novo método de integração
+                MessageBox.Show("Integração com Google Calendar realizada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao integrar com o Google Calendar: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void SalvarAtividades()
         {
             try
@@ -350,6 +363,16 @@ namespace AppTarefas
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             SalvarAtividades();// Salva as atividades ao fechar
+        }
+
+        private void listBoxSubtarefas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

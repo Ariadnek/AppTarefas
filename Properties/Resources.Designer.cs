@@ -69,5 +69,15 @@ namespace AppTarefas.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Google_Calendar_icon__2020__svg__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Google_Calendar_icon_(2020).svg (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
