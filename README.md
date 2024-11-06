@@ -1,6 +1,6 @@
 <!-- Bem-vindo 🚀 -->
 
-## App de Planejamento de Estudos
+## App de Planejamento de Estudos e Tarefas
 
 ## Descrição
 
