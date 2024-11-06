@@ -4,7 +4,7 @@
 
 ## Descrição
 
-O App de Planejamento de Estudos é uma aplicação desktop desenvolvida em C# utilizando Windows Forms, que permite aos usuários gerenciar suas atividades e subtarefas de maneira eficiente. O aplicativo oferece funcionalidades para adicionar, editar, excluir e organizar tarefas de estudo, além de permitir a definição de prazos e o acompanhamento do status de conclusão das atividades.
+O Study Master é uma aplicação desktop desenvolvida em C# utilizando Windows Forms, que permite aos usuários gerenciar suas atividades e subtarefas de maneira eficiente. O aplicativo oferece funcionalidades para adicionar, editar, excluir e organizar tarefas de estudo, além de permitir a definição de prazos e o acompanhamento do status de conclusão das atividades.
 
 ## Funcionalidades
 
