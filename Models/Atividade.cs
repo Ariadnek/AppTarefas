@@ -11,7 +11,7 @@ namespace AppTarefas.Models
         public bool Concluida { get; set; }
         public List<Subtarefa> Subtarefas { get; set; }
 
-        public Atividade() // Construtor padrão necessário para a serialização
+        public Atividade() 
         {
             Subtarefas = new List<Subtarefa>();
         }

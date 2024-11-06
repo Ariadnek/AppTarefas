@@ -6,15 +6,14 @@ using Google.Apis.Util.Store;
 using System;
 using System.IO;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AppTarefas
 {
     public class Program
     {
-        static string[] Scopes = { CalendarService.Scope.CalendarReadonly };
-        static string ApplicationName = "AppTarefas";
+        static string[] Scopes = { CalendarService.Scope.Calendar };
+        static string ApplicationName = "StudyMaster";
 
         [STAThread]
         public static void Main()
@@ -23,8 +22,16 @@ namespace AppTarefas
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
+    }
 
-        public static void IntegrateWithGoogleCalendar()
+    public static class GoogleCalendarHelper
+    {
+        private static string[] Scopes = { CalendarService.Scope.Calendar };
+        private static string ApplicationName = "StudyMaster";
+        private static CalendarService service;
+
+        // Método para obter o serviço do Google Calendar
+        public static CalendarService GetCalendarService()
         {
             try
             {
@@ -41,16 +48,37 @@ namespace AppTarefas
                         new FileDataStore(credPath, true)).Result;
                 }
 
-                // Cria o serviço de calendário
-                var service = new CalendarService(new BaseClientService.Initializer()
+                // Retorna o serviço autenticado do Google Calendar
+                return new CalendarService(new BaseClientService.Initializer()
                 {
                     HttpClientInitializer = credential,
                     ApplicationName = ApplicationName,
                 });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao autenticar com o Google Calendar: " + ex.Message);
+                return null;
+            }
+        }
+
+        // integrar e buscar eventos do Google Calendar
+        public static void IntegrateWithGoogleCalendar()
+        {
+            try
+            {
+                
+                service = GetCalendarService();
+
+                if (service == null)
+                    return;
 
                 // Define o tempo mínimo para o qual queremos listar eventos
                 var request = service.Events.List("primary");
-                request.TimeMinDateTimeOffset = DateTimeOffset.Now; // Usando TimeMinDateTimeOffset
+
+               
+                request.TimeMinDateTimeOffset = DateTimeOffset.UtcNow; // Usando DateTimeOffset.UtcNow
+
                 request.ShowDeleted = false;
                 request.SingleEvents = true;
                 request.MaxResults = 10;
@@ -63,8 +91,11 @@ namespace AppTarefas
                 {
                     foreach (var eventItem in events.Items)
                     {
-                        string start = eventItem.Start.DateTime.HasValue ?
-                            eventItem.Start.DateTime.Value.ToString("g") : "Sem data";
+                       
+                        string start = eventItem.Start.DateTimeDateTimeOffset.HasValue
+                            ? eventItem.Start.DateTimeDateTimeOffset.Value.ToString("g")
+                            : "Sem data";
+
                         MessageBox.Show($"Evento: {eventItem.Summary}\nInício: {start}", "Evento no Google Calendar");
                     }
                 }

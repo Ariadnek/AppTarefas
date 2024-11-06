@@ -19,6 +19,7 @@ namespace AppTarefas
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.btnExcluirHistoricoConcluidas = new System.Windows.Forms.Button();
             this.labelSaudacao = new System.Windows.Forms.Label();
             this.labelHora = new System.Windows.Forms.Label();
             this.textBoxTitulo = new System.Windows.Forms.TextBox();
@@ -43,13 +44,24 @@ namespace AppTarefas
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
             // 
+            // btnExcluirHistoricoConcluidas
+            // 
+            this.btnExcluirHistoricoConcluidas.Location = new System.Drawing.Point(315, 575);
+            this.btnExcluirHistoricoConcluidas.Name = "btnExcluirHistoricoConcluidas";
+            this.btnExcluirHistoricoConcluidas.Size = new System.Drawing.Size(164, 40);
+            this.btnExcluirHistoricoConcluidas.TabIndex = 0;
+            this.btnExcluirHistoricoConcluidas.Text = "Excluir Histórico de Concluídas";
+            this.btnExcluirHistoricoConcluidas.UseVisualStyleBackColor = true;
+            this.btnExcluirHistoricoConcluidas.Click += new System.EventHandler(this.btnExcluirHistoricoConcluidas_Click);
+            // 
             // labelSaudacao
             // 
             this.labelSaudacao.AutoSize = true;
-            this.labelSaudacao.Font = new System.Drawing.Font("Bookman Old Style", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSaudacao.Font = new System.Drawing.Font("Bookman Old Style", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSaudacao.ForeColor = System.Drawing.Color.SteelBlue;
             this.labelSaudacao.Location = new System.Drawing.Point(331, 21);
             this.labelSaudacao.Name = "labelSaudacao";
-            this.labelSaudacao.Size = new System.Drawing.Size(184, 40);
+            this.labelSaudacao.Size = new System.Drawing.Size(175, 38);
             this.labelSaudacao.TabIndex = 0;
             this.labelSaudacao.Text = "Saudação";
             // 
@@ -57,9 +69,9 @@ namespace AppTarefas
             // 
             this.labelHora.AutoSize = true;
             this.labelHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelHora.Location = new System.Drawing.Point(359, 63);
+            this.labelHora.Location = new System.Drawing.Point(385, 66);
             this.labelHora.Name = "labelHora";
-            this.labelHora.Size = new System.Drawing.Size(54, 25);
+            this.labelHora.Size = new System.Drawing.Size(44, 20);
             this.labelHora.TabIndex = 1;
             this.labelHora.Text = "Hora";
             // 
@@ -68,7 +80,7 @@ namespace AppTarefas
             this.textBoxTitulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxTitulo.Location = new System.Drawing.Point(29, 207);
             this.textBoxTitulo.Name = "textBoxTitulo";
-            this.textBoxTitulo.Size = new System.Drawing.Size(279, 22);
+            this.textBoxTitulo.Size = new System.Drawing.Size(279, 20);
             this.textBoxTitulo.TabIndex = 2;
             // 
             // btnIntegrateGoogleCalendar
@@ -105,16 +117,15 @@ namespace AppTarefas
             this.dateTimePickerPrazo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerPrazo.Location = new System.Drawing.Point(462, 207);
             this.dateTimePickerPrazo.Name = "dateTimePickerPrazo";
-            this.dateTimePickerPrazo.Size = new System.Drawing.Size(255, 22);
+            this.dateTimePickerPrazo.Size = new System.Drawing.Size(255, 20);
             this.dateTimePickerPrazo.TabIndex = 4;
             // 
             // listBoxAtividades
             // 
             this.listBoxAtividades.FormattingEnabled = true;
-            this.listBoxAtividades.ItemHeight = 16;
             this.listBoxAtividades.Location = new System.Drawing.Point(28, 372);
             this.listBoxAtividades.Name = "listBoxAtividades";
-            this.listBoxAtividades.Size = new System.Drawing.Size(280, 100);
+            this.listBoxAtividades.Size = new System.Drawing.Size(280, 95);
             this.listBoxAtividades.TabIndex = 5;
             this.listBoxAtividades.SelectedIndexChanged += new System.EventHandler(this.listBoxAtividades_SelectedIndexChanged);
             // 
@@ -131,10 +142,9 @@ namespace AppTarefas
             // listBoxSubtarefas
             // 
             this.listBoxSubtarefas.FormattingEnabled = true;
-            this.listBoxSubtarefas.ItemHeight = 16;
             this.listBoxSubtarefas.Location = new System.Drawing.Point(462, 372);
             this.listBoxSubtarefas.Name = "listBoxSubtarefas";
-            this.listBoxSubtarefas.Size = new System.Drawing.Size(280, 100);
+            this.listBoxSubtarefas.Size = new System.Drawing.Size(280, 95);
             this.listBoxSubtarefas.TabIndex = 7;
             this.listBoxSubtarefas.SelectedIndexChanged += new System.EventHandler(this.listBoxSubtarefas_SelectedIndexChanged);
             // 
@@ -198,71 +208,65 @@ namespace AppTarefas
             this.btnExcluirSubtarefa.UseVisualStyleBackColor = true;
             this.btnExcluirSubtarefa.Click += new System.EventHandler(this.btnExcluirSubtarefa_Click);
             // 
-            // label1
+            // Tarefas Atuais
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(25, 349);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 20);
+            this.label1.Size = new System.Drawing.Size(106, 16);
             this.label1.TabIndex = 17;
             this.label1.Text = "Tarefas Atuais";
             // 
-            // label2
+            // Subtarefas Atuais
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(459, 349);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 20);
+            this.label2.Size = new System.Drawing.Size(128, 16);
             this.label2.TabIndex = 18;
             this.label2.Text = "Subtarefas Atuais";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // label3
+            // Tarefas Concluídas
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(24, 530);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(169, 20);
+            this.label3.Size = new System.Drawing.Size(138, 16);
             this.label3.TabIndex = 19;
             this.label3.Text = "Tarefas Concluídas";
             // 
-            // listBoxAtividadesConcluidas
+            // listBox AtividadesConcluidas
             // 
             this.listBoxAtividadesConcluidas.FormattingEnabled = true;
-            this.listBoxAtividadesConcluidas.ItemHeight = 16;
             this.listBoxAtividadesConcluidas.Location = new System.Drawing.Point(29, 553);
             this.listBoxAtividadesConcluidas.Name = "listBoxAtividadesConcluidas";
-            this.listBoxAtividadesConcluidas.Size = new System.Drawing.Size(280, 100);
+            this.listBoxAtividadesConcluidas.Size = new System.Drawing.Size(280, 95);
             this.listBoxAtividadesConcluidas.TabIndex = 20;
             // 
-            // label4
+            // Tarefa
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(25, 182);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 20);
+            this.label4.Size = new System.Drawing.Size(51, 16);
             this.label4.TabIndex = 21;
             this.label4.Text = "Tarefa";
             // 
-            // label5
+            // Definir Prazo
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(459, 182);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(116, 20);
+            this.label5.Size = new System.Drawing.Size(94, 16);
             this.label5.TabIndex = 22;
             this.label5.Text = "Definir prazo";
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Black;
-            this.imageList1.Images.SetKeyName(0, "Google_Calendar_icon_(2020).svg (1).png");
+
             // 
             // Form1
             // 
@@ -288,6 +292,7 @@ namespace AppTarefas
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.listBoxAtividadesConcluidas);
+            this.Controls.Add(this.btnExcluirHistoricoConcluidas);
             this.Name = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -314,6 +319,7 @@ namespace AppTarefas
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnExcluirHistoricoConcluidas;
         private System.Windows.Forms.ListBox listBoxAtividadesConcluidas;
         private Label label4;
         private Label label5;
