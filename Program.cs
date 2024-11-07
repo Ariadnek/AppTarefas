@@ -77,7 +77,7 @@ namespace AppTarefas
                 var request = service.Events.List("primary");
 
                
-                request.TimeMinDateTimeOffset = DateTimeOffset.UtcNow; // Usando DateTimeOffset.UtcNow
+                request.TimeMinDateTimeOffset = DateTimeOffset.UtcNow; 
 
                 request.ShowDeleted = false;
                 request.SingleEvents = true;
