@@ -36,7 +36,7 @@ private void btnIntegrateGoogleCalendar_Click(object sender, EventArgs e)
 {
     try
     {
-                GoogleCalendarHelper.IntegrateWithGoogleCalendar(); // Chama o método de integração
+                GoogleCalendarHelper.IntegrateWithGoogleCalendar();
                 MessageBox.Show("Integração com Google Calendar realizada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
     catch (Exception ex)
@@ -47,7 +47,7 @@ private void btnIntegrateGoogleCalendar_Click(object sender, EventArgs e)
 
         private void AdicionarTarefaNoGoogleCalendar(Atividade novaAtividade)
         {
-            // Verifique se a integração com o Google Calendar foi configurada
+            // Verifica se a integração com o Google Calendar foi configurada
             var service = GoogleCalendarHelper.GetCalendarService();
             if (service == null)
             {
