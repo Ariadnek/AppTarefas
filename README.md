@@ -35,7 +35,3 @@ Abra o projeto no Visual Studio.
 Compile e execute a aplicação.
 
 Gerencie suas atividades de estudo de forma organizada!
-
-## Contribuição
-
-Contribuições são bem-vindas! Sinta-se à vontade para enviar pull requests ou relatar problemas.
