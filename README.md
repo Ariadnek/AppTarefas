@@ -8,15 +8,15 @@ O Study Master é uma aplicação desktop desenvolvida em C# utilizando Windows 
 
 ## Funcionalidades
 
-Gerenciamento de Atividades: Adicione, edite e exclua atividades com prazos definidos.
+1. Adicionar e Excluir Atividades: O usuário pode adicionar atividades principais, como " Tarefa 1" ou "Estudar Programação", e excluir atividades que já foram concluídas ou não são mais relevantes.
 
-Subtarefas: Crie e gerencie subtarefas associadas a cada atividade.
+2. Divisão de Tarefas em Sub-Tarefas: As atividades podem ser divididas em subtarefas, como "Capítulo 1", "Funções", "POO", etc., permitindo uma gestão mais detalhada dos estudos.
 
-Status de Conclusão: Marque atividades e subtarefas como concluídas.
+3. Definir Prazo e Tempo para Conclusão: O usuário pode definir datas, tempos e prazos para concluir tanto as atividades quanto as subtarefas, promovendo uma organização eficaz.
 
-Salvamento de Dados: Os dados são salvos offline em um arquivo binário, garantindo que as informações permaneçam disponíveis mesmo após o fechamento do aplicativo.
+4. Monitoramento do Progresso: É possível acompanhar o progresso de cada atividade e sub-tarefa, de forma visual, ajudando o usuário a ter uma visão clara dos afazeres.
 
-Interface Amigável: A interface foi projetada para ser intuitiva e de fácil uso, permitindo uma experiência de usuário fluida.
+5. Integrar tarefas com Google Calendar: O usuário pode fazer a autenticação do da sua conta Google, assim, após a criação de uma tarefa no aplicativo e definição de prazos, a tarefa é automaticamente convertida em um evento no Google Calendar.
 
 ## Tecnologias Utilizadas
 
