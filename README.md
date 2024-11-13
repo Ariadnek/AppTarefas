@@ -4,7 +4,7 @@
 
 ## Descrição
 
-O Study Master é uma aplicação desktop desenvolvida em C# utilizando Windows Forms, que permite aos usuários gerenciar suas atividades e subtarefas de maneira eficiente. O aplicativo oferece funcionalidades para adicionar, editar, excluir e organizar tarefas de estudo, além de permitir a definição de prazos e o acompanhamento do status de conclusão das atividades.
+O Study Master é uma aplicação desktop desenvolvida em C# utilizando Windows Forms, que permite aos usuários gerenciar suas atividades e subtarefas de maneira eficiente. O aplicativo oferece funcionalidades para adicionar, editar, excluir e organizar tarefas, além de permitir a definição de prazos e o acompanhamento do status de conclusão das atividades. Também possui intrgração com Google Calendar.
 
 ## Funcionalidades
 
@@ -20,11 +20,16 @@ Interface Amigável: A interface foi projetada para ser intuitiva e de fácil us
 
 ## Tecnologias Utilizadas
 
-C#
+• Linguagem de Programação: C#
 
-Windows Forms
+• Plataforma: .NET Framework
 
-Serialização de objetos
+• IDE: Visual Studio Code
+
+• Interface do Usuário: Windows Forms
+
+• Integração API: Google Calendar API
+
 
 ## Como Usar
 
